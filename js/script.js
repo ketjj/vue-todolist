@@ -1,7 +1,3 @@
-// **Descrizione:**
-// Questa volta però ogni todo sarà un oggetto, formato da due proprietà:
-// - `text`, una stringa che indica il testo del todo
-// - `done`, un booleano (true/false) che indica se il todo è stato fatto oppure no
 
 // **MILESTONE 1**
 // Stampare all’interno di una lista, un item per ogni todo.
@@ -17,7 +13,7 @@ const app = new Vue({
     todo: [
       {
         text: 'fare la spesa',
-        done: false
+        done: true
       },
       {
         text: 'fare recup di Javascript',
@@ -26,7 +22,7 @@ const app = new Vue({
       
       {
         text: 'fare una passeggiata',
-        done: false
+        done: true
       },
       {
         text: 'sorridi',
@@ -35,8 +31,7 @@ const app = new Vue({
     ],
 
     toDoList: '',
-    lineThrought: 'cancella'
-    
+    listDone: ''
 
   },
 
@@ -58,7 +53,17 @@ const app = new Vue({
     removeTodo(index){
       this.todo.splice(index, 1)
 
-    },
+    }
+
+
+    // toggleLine(index){
+    //   console.log(index)
+    //   this.todo[index].done = !this.todo[index].done
+    //   if(this.todo[index].done == true){
+    //     listDone = 'cancella'
+    //   }else{
+    //     listDone = ''
+    //   }
 
 
   }

@@ -31,15 +31,18 @@
 
         </div>
 
-
         <div class="lists">
             <ul v-if="todo.length > 0">
-                <li v-for="(todoList, index) in todo">{{todoList.text}} 
+                <li v-for="(todoList, index) in todo"  @click="todoList.done = !todoList.done" :class="{'cancella' : todoList.done}">
+                    {{todoList.text}}  
                     <i @click="removeTodo(index)"
                     class="fa-solid fa-xmark"></i>
-                </li>            
+                </li> 
+                
+                
             </ul>
             <h3 v-else>La lista ToDo è vuota</h3>
+            
         </div>
 
     </div>
