@@ -21,21 +21,26 @@
         <h1>ToDo list</h1>
 
         <div class="input_area my-5">
-            <input class="form-control form_k" type="text" placeholder="New ToDo">
 
-            <button type="button" class="btn btn-light k_button">Add new</button>
+            <input 
+            v-model.trim="toDoList"
+            @keyup.enter="addNewTodo" 
+            class="form-control form_k" type="text" placeholder="New ToDo">
+
+            <button @click="addNewTodo" type="button" class="btn btn-light k_button">Add new</button>
+
         </div>
 
 
         <div class="lists">
-            <ul>
-                <li>X
-                    <i class="fa-solid fa-xmark"></i>
+            <ul v-if="todo.length > 0">
+                <li v-for="(todoList, index) in todo">{{todoList.text}} 
+                    <i @click="removeTodo(index)"
+                    class="fa-solid fa-xmark"></i>
                 </li>            
             </ul>
+            <h3 v-else>La lista ToDo è vuota</h3>
         </div>
-
-       
 
     </div>
 
